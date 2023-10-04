@@ -4,7 +4,7 @@
             <tr>
                 <th scope="col">N#</th>
                 <th scope="col">Nombre de paginacion</th>
-                <td scope="col">Tamaño del proceso</td>
+                <th scope="col">Tamaño del proceso</th>
                 <th scope="col">Activo</th>
                 <th scope="col">En espera</th>
                 <th scope="col">Quitar</th>

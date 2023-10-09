@@ -9,11 +9,18 @@ class Proceso_memoria extends Controller
 {
     public function store(Request $request){
         $validate = new Validate_controller();
-        $validate->proceso_store_validate($request);
         $procesos = new Procesos();
-        $procesos->nom_proceso = $request->nom_proceso;
-        $procesos->size_proceso = $request->size_proceso;
-        $procesos->procesos_activos = 1;
+        $validate->proceso_store_validate($request);
+        if(Procesos::where('procesos_activos', 1 )->get()->sum('size_proceso') >= 4098){
+            $procesos->nom_proceso = $request->nom_proceso;
+            $procesos->size_proceso = $request->size_proceso;
+            $procesos->procesos_activos = 0;
+            $procesos->procesos_espera = 1;
+        }else{
+            $procesos->nom_proceso = $request->nom_proceso;
+            $procesos->size_proceso = $request->size_proceso;
+            $procesos->procesos_activos = 1;
+        }
         $procesos->save();
         return redirect()->back();
     }

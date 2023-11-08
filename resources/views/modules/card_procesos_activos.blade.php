@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card h-100">
     <div class="card-body">
         <h5 class="card-title text-center">N# Procesos activos</h5>
         <p class="card-text">
@@ -15,6 +15,7 @@
                 <div class="progress-bar bg-dark" role="progressbar" style="width: {{ ($total_H8 *100) / 4096 }}%;" aria-valuenow="{{ ($total_H8 *100) / 4096 }}" aria-valuemin="0" aria-valuemax="100">{{ ($total_H8 *100) / 4096 }}%</div>
             </div>
             Memoria ocupada: {{ ($total_activos *100) / 4096 }}%
+            <div class="col-md-12 text-center mt-3"><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Marco de pagina</button></div>
         </p>
     </div>
 </div>

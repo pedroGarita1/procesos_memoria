@@ -11,7 +11,7 @@ class Proceso_memoria extends Controller
         $validate = new Validate_controller();
         $procesos = new Procesos();
         $validate->proceso_store_validate($request);
-        if(Procesos::where('procesos_activos', 1 )->get()->sum('size_proceso') >= 4098){
+        if(Procesos::where('procesos_activos', 1 )->get()->sum('size_proceso') > 1024){
             $procesos->nom_proceso = $request->nom_proceso;
             $procesos->size_proceso = $request->size_proceso;
             $procesos->procesos_activos = 0;
@@ -21,6 +21,7 @@ class Proceso_memoria extends Controller
             $procesos->size_proceso = $request->size_proceso;
             $procesos->procesos_activos = 1;
         }
+        
         $procesos->save();
         return redirect()->back();
     }

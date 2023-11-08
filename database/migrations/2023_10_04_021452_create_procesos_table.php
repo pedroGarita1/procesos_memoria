@@ -17,7 +17,7 @@ class CreateProcesosTable extends Migration
             $table->id();
             $table->text('nom_proceso');
             $table->integer('size_proceso');
-            $table->integer('procesos_activos')->default(0);
+            $table->integer('procesos_activos')->default(1);
             $table->integer('procesos_espera')->default(0);
             $table->timestamps();
         });

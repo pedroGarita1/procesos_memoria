@@ -25,7 +25,6 @@
                     <option value="128">128 Mb</option>
                     <option value="256">256 Mb</option>
                     <option value="512">512 Mb</option>
-                    <option value="1024">1024 Mb</option>
                 </select>
                 @error('size_proceso')
                         <div id="basic-addon2" class="invalid-feedback">
